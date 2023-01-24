@@ -5,4 +5,11 @@
   <p>Phone Number: <%= @restaurant.phone_number %></p>
   <p><%= link_to "Back", restaurants_path %></p>
   <hr>
+  <p><strong>Reviews</strong></p>
+  <ul class='list-group'>
+    <% @restaurant.reviews.each do | review | %>
+      <li class='list-group-item'><%= review.rating %> - <%= review.content %></li>
+    <% end %>
+  </ul>
+  <hr>
 </div>
